@@ -1,37 +1,36 @@
 package sortex;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SortTest {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
 
-        ArrayList<Integer> numberList = new ArrayList<Integer>();
-        Scanner scanner = new Scanner(System.in);
-        QuickSort quickSort = new QuickSort();
-        HeapSort heapSort = new HeapSort();
-        BubbleSort bubbleSort = new BubbleSort();
+        System.out.println("정렬방식을 선택 하세요");
+        System.out.println("B : BubbleSort ");
+        System.out.println("H : HeapSort ");
+        System.out.println("Q : QuickSort");
 
-        while(true){
-            System.out.println("숫자를 입력해주세요. 숫자 0 을 입력하면 중지합니다.");
-            int select = scanner.nextInt();
-            if(select == 0){
-                System.out.println("중지되었습니다.");
-                break;
-            }
-            numberList.add(select);
+        int ch = System.in.read();
+        Sort sort = null;
+
+        if(ch == "B" || ch =="b"){
+            sort = new BubbleSort();
+        }
+        else if(ch =="H" || ch =="h"){
+            sort = new HeapSort();
+        }
+        else if (ch =="Q" || ch =="q"){
+            sort = new QuickSort();
+        } else {
+            System.out.println("지원되지 않는 기능입니다. ");
+            return;
         }
 
-
-        System.out.println("정렬 방법을 선택해 주세요.");
-        System.out.println("q : QuickSort 의 방법으로 정렬합니다.");
-        System.out.println("h : QuickSort 의 방법으로 정렬합니다.");
-        System.out.println("b : QuickSort 의 방법으로 정렬합니다.");
-
-        String select = scanner.next();
-        if(select == "q"){
-
-        }
+        int[] arr = new int[10];
+        sort.ascending(arr);
+        sort.descending(arr);
+        sort.description();
     }
-
 }

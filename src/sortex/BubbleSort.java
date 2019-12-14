@@ -1,20 +1,23 @@
 package sortex;
 
+import java.util.ArrayList;
+
 public class BubbleSort  implements Sort{
     @Override
-    public String ascending(int[] arr) {
-        return "BubbleSort ascending";
+    public void ascending(int [] arr) {
+        System.out.println("BubbleSort ascending");
     }
 
     @Override
-    public String descending(int[] arr) {
-        return "BubbleSort descending";
+    public void descending(int [] arr) {
+        System.out.println("BubbleSort descending");
     }
 
     @Override
-    public void description(int[] arr) {
+    public void description() {
 
-        System.out.println(ascending(arr));
-        System.out.println(descending(arr));
+        Sort.super.description();
+        System.out.println("HeapSort 로 정렬합니다.");
+
     }
 }

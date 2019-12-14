@@ -1,20 +1,24 @@
 package sortex;
 
+import java.util.ArrayList;
+
 public class QuickSort  implements Sort{
     @Override
-    public String ascending(int[] arr) {
-        return "QuickSort ascending";
+    public void ascending(int[] arr) {
+        System.out.println("QuickSort ascending");
     }
 
     @Override
-    public String descending(int[] arr) {
-        return "QuickSort descending";
+    public void descending(int [] arr) {
+        System.out.println("QuickSort descending");
     }
 
-    @Override
-    public void description(int[] arr) {
 
-        System.out.println(ascending(arr));
-        System.out.println(descending(arr));
+    @Override
+    public void description() {
+
+        Sort.super.description();
+        System.out.println("QuickSort 로 정렬합니다.");
+
     }
 }

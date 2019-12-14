@@ -1,9 +1,13 @@
 package sortex;
 
+import java.util.ArrayList;
+
 public interface Sort {
 
-    String ascending(int[] arr );
-    String descending(int[] arr );
+    void ascending(int[] arr );
+    void descending(int[] arr );
 
-    public void description(int[] arr);
+    default void description(){
+        System.out.println("숫자를 정렬하는 알고리즘 입니다.");
+    }
 }
